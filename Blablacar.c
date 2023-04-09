@@ -117,8 +117,8 @@ int afficher_menu() {
     printf("4. Proposer un trajet (espace Conduteur)");
     printf("5. Sélectionner un trajet (espace Conducteur)");
     printf("6. Gérer les Comptes Conduteurs");
-    printf("7.");
-    printf("8.");
+    printf("7. Choisir un trajet (espace Client)");
+    printf("8. Modifier / Annuler un trajet (espace Client)");
     printf("9. Quitter");
     return choix_utilisateur;
 }
