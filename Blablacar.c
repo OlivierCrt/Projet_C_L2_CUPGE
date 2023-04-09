@@ -1,65 +1,154 @@
-#ifndef COVOITURAGE_H
-#define COVOITURAGE_H
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "entreprise_covolturage.h"
 
 #define MAX_VILLES 9
-#define MAX_TRAJETS 100
-#define MAX_CONDUCTEURS 50
+#define MAX_CONDUCTEURS 100
 #define MAX_CLIENTS 100
 
-typedef struct {
-    char nom[20];
-} Ville;
+// Fonction principale
+int main() {
 
-typedef struct {
-    char ville_depart[20];
-    char ville_arrivee[20];
-    char date[11];
-    int places_disponibles;
-    int places_occupees;
-    int conducteur_id;
-    int clients_ids[2];
-} Trajet;
+    typedef struct {
+        char nom[50];
+    } Ville;
 
-typedef struct {
-    char nom[20];
-    char prenom[20];
-    char mot_de_passe[20];
-    int nb_trajets;
-    int trajets_ids[MAX_TRAJETS];
-} Conducteur;
+    typedef struct {
+        char nom[50];
+        char vehicule[20];
+        int places_disponibles;
+        int trajet[MAX_VILLES];
+    } Conducteur;
 
-typedef struct {
-    char nom[20];
-    char prenom[20];
-    char mot_de_passe[20];
-    int nb_trajets;
-    int trajets_ids[MAX_TRAJETS];
-} Client;
+    typedef struct {
+        char nom[50];
+        char trajet[20];
+        int nb_personnes;
+    } Client;
 
-// Fonctions pour la gestion des villes
-void ajouter_ville(Ville* villes, int* nb_villes);
-void modifier_ville(Ville* villes, int nb_villes);
-void supprimer_ville(Ville* villes, int* nb_villes);
+    typedef struct {
+        char date[20];
+        int ville_depart;
+        int ville_arrivee;
+        int places_disponibles;
+        int clients[MAX_CLIENTS];
+    } Trajet;
 
-// Fonctions pour l'administration
-void changer_mot_de_passe(Conducteur* conducteurs, int nb_conducteurs, Client* clients, int nb_clients);
-void exporter_conducteurs(Conducteur* conducteurs, int nb_conducteurs);
+    Ville villes[MAX_VILLES] = { {"Lille"}, {"Paris"}, {"Strasbourg"}, {"Lyon"}, {"Bordeaux"}, {"Toulouse"}, {"Montpellier"}, {"Marseille"}, {"Nice"} };
+    Conducteur conducteurs[MAX_CONDUCTEURS];
+    int nb_conducteurs = 0;
+    Client clients[MAX_CLIENTS];
+    int nb_clients = 0;
+    Trajet trajets[MAX_VILLES * MAX_VILLES];
+    int nb_trajets = 0;
+    char admin_password[20] = "admin";
 
-// Fonctions pour les conducteurs
-void creer_trajet(Conducteur* conducteur, Trajet* trajets, int* nb_trajets, Ville* villes, int nb_villes);
-void afficher_trajets(Conducteur conducteur, Trajet* trajets, int nb_trajets, Ville* villes, int nb_villes);
-void changer_mot_de_passe_conducteur(Conducteur* conducteur);
-void changer_coordonnees_conducteur(Conducteur* conducteur);
 
-// Fonctions pour les clients
-void chercher_trajet(Trajet* trajets, int nb_trajets, Ville* villes, int nb_villes);
-void reserver_trajet(Trajet* trajets, int nb_trajets, Client* client, Conducteur* conducteurs, int nb_conducteurs, Ville* villes, int nb_villes);
-void modifier_trajet(Client* client, Trajet* trajets, int nb_trajets, Ville* villes, int nb_villes);
-void changer_mot_de_passe_client(Client* client);
-void changer_coordonnees_client(Client* client);
+    // Boucle principale du programme
+    int choix_menu = -1;
+    while (choix_menu != 9) {
 
-#endif
+        // Affichage des menus et saisie utilisateur
+        choix_menu = afficher_menu();
+
+        // Traitement de la saisie utilisateur
+        switch (choix_menu) {
+        case 1:
+            // Gestion des villes
+            gerer_villes();
+            break;
+        case 2:
+            // Exportation des conducteurs au format JSON
+            exporter_conducteurs_JSON();
+            break;
+        case 3:
+            // Administration de comptes
+            administrer_comptes();
+            break;
+        case 4:
+            // Offre de trajet pour les conducteurs
+            offrir_trajet_conducteur();
+            break;
+        case 5:
+            // Recherche de trajets pour les conducteurs
+            rechercher_trajets_conducteur();
+            break;
+        case 6:
+            // Administration de comptes conducteurs
+            administrer_compte_conducteur();
+            break;
+        case 7:
+            // Recherche de trajets pour les clients
+            rechercher_trajets_client();
+            break;
+        case 8:
+            // Réservation/modification de trajets pour les clients
+            reserver_modifier_trajet_client();
+            break;
+        case 9:
+            // Quitter le programme
+            printf("Au revoir !\n");
+            break;
+        default:
+            // Gestion d'une saisie invalide
+            printf("Saisie invalide. Veuillez saisir un choix valide.\n");
+            break;
+        }
+
+    }
+
+    // Libération de la mémoire allouée
+    // ...
+
+    return 0;
+}
+
+// Fonctions pour chaque menu
+int afficher_menu() {
+    // Affichage du menu et saisie utilisateur
+    // ...
+
+    return choix_utilisateur;
+}
+
+void gerer_villes() {
+    // Ajout, modification ou suppression de villes
+    // ...
+}
+
+void exporter_conducteurs_JSON() {
+    // Exportation des conducteurs au format JSON
+    // ...
+}
+
+void administrer_comptes() {
+    // Changement de mot de passe pour conducteurs ou clients
+    // ...
+}
+
+void offrir_trajet_conducteur() {
+    // Création d'un nouveau trajet pour un conducteur
+    // ...
+}
+
+void rechercher_trajets_conducteur() {
+    // Recherche des trajets pour un conducteur
+    // ...
+}
+
+void administrer_compte_conducteur() {
+    // Changement de mot de passe ou de coordonnées pour un conducteur
+    // ...
+}
+
+void rechercher_trajets_client() {
+    // Recherche de trajets pour un client
+    // ...
+}
+
+void reserver_modifier_trajet_client() {
+    // Réservation ou modification d'un trajet pour un client
+    // ...
+}
+
