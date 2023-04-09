@@ -111,17 +111,18 @@ int afficher_menu() {
     // ...
     printf("Bienvenu !\n");
     printf("Pour parcourir notre application veuillez saisir un nombre de 1 à 9 pour accéder a l'espace\n\n");
-    printf("1. Gestions des Villes");
-    printf("2. Liste des Conducteurs");
-    printf("3. Gérer les Comptes");
-    printf("4. Proposer un trajet (espace Conduteur)");
-    printf("5. Sélectionner un trajet (espace Conducteur)");
-    printf("6. Gérer les Comptes Conduteurs");
-    printf("7. Choisir un trajet (espace Client)");
-    printf("8. Modifier / Annuler un trajet (espace Client)");
-    printf("9. Quitter");
+    printf("    1. Gestions des Villes\n");
+    printf("    2. Liste des Conducteurs\n");
+    printf("    3. Gérer les Comptes\n");
+    printf("    4. Proposer un trajet (espace Conduteur)\n");
+    printf("    5. Sélectionner un trajet (espace Conducteur)\n");
+    printf("    6. Gérer les Comptes Conduteurs\n");
+    printf("    7. Choisir un trajet (espace Client)\n");
+    printf("    8. Modifier / Annuler un trajet (espace Client)\n");
+    printf("    9. Quitter\n\n");
     int choix_utilisateur;
-    scanf( "Sélectionnez un paramètre : ", &choix_utilisateur );
+    printf("Sélectionnez un paramètre : \n");
+    scanf( "%d", &choix_utilisateur );
     return choix_utilisateur;
 }
 
