@@ -109,7 +109,17 @@ int main() {
 int afficher_menu() {
     // Affichage du menu et saisie utilisateur
     // ...
-
+    printf("Bienvenu !\n");
+    printf("Pour parcourir notre application veuillez saisir un nombre de 1 à 9 pour accéder a l'espace\n\n");
+    printf("1.");
+    printf("2.");
+    printf("3.");
+    printf("4.");
+    printf("5.");
+    printf("6.");
+    printf("7.");
+    printf("8.");
+    printf("9. Quitter");
     return choix_utilisateur;
 }
 
