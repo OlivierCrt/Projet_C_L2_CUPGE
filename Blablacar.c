@@ -111,9 +111,9 @@ int afficher_menu() {
     // ...
     printf("Bienvenu !\n");
     printf("Pour parcourir notre application veuillez saisir un nombre de 1 à 9 pour accéder a l'espace\n\n");
-    printf("1.");
-    printf("2.");
-    printf("3.");
+    printf("1. Gestions des Villes");
+    printf("2. Liste des Conducteurs");
+    printf("3. ");
     printf("4.");
     printf("5.");
     printf("6.");
