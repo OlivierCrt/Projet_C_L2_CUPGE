@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <json-c/json.h>
 #include "entreprise_covolturage.h"
 
 #define MAX_VILLES 9
