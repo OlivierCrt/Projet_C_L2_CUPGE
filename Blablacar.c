@@ -114,8 +114,8 @@ int afficher_menu() {
     printf("1. Gestions des Villes");
     printf("2. Liste des Conducteurs");
     printf("3. Gérer les Comptes");
-    printf("4. Demande Trajets");
-    printf("5. Offres Trajets");
+    printf("4. Proposer un trajet (espace Conduteur)");
+    printf("5. Sélectionner un trajet (espace Conducteur)");
     printf("6. Gérer les Comptes Conduteurs");
     printf("7.");
     printf("8.");
