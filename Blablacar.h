@@ -18,8 +18,6 @@ typedef struct {
     char ville_depart[20];
     char ville_arrivee[20];
     char date[11];
-    int places_disponibles;
-    int places_occupees;
     int conducteur_id;
     int clients_ids[2];
 } Trajet;
