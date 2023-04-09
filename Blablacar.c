@@ -120,7 +120,7 @@ int afficher_menu() {
     printf("7. Choisir un trajet (espace Client)");
     printf("8. Modifier / Annuler un trajet (espace Client)");
     printf("9. Quitter");
-    scanf( "Sélectionnez un paramètre : ", choix );
+    scanf( "Sélectionnez un paramètre : ", choix_utilisateur );
     return choix_utilisateur;
 }
 
