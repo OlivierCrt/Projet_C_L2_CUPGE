@@ -132,6 +132,9 @@ void login(Conducteur* conducteurs, Client* clients, Admin admin) {
     login(conducteurs, clients, admin);
 }
 
+
+//-------------------ADMIN---------------------------
+
 void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville* villes){
     int choix;
     printf("Vous voulez : \n");
@@ -146,20 +149,48 @@ void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville*
     scanf("%d", &choix);
     switch (choix) {
     case 1:
-        return;
-        
+        //void add_v(Ville* villes) {
+          printf("Nom de la ville à ajouter : ");
+          char nom[50];
+          scanf("%s", nom);
+          Ville ville = { nom };
+          villes[NB_VILLES] = ville;
+          printf("La ville %s a bien été ajoutée !\n", nom);
+          NB_VILLES++;
+          return; 
+        }
         printf("Erreur\n");
         break;
    case 2:
-        return;
-        
+        //void edit_v(Ville* villes, Ville ville) {
+          printf("Nom de la ville à modifier : ");
+          char nom[50];
+          scanf("%s", nom);
+          for (int i = 0; i < NB_VILLES; i++) {
+              if (strcmp(villes[i].nom, nom) == 0) {
+                  printf("Nouveau nom de la ville : ");
+                  scanf("%s", villes[i].nom);
+                  printf("La ville %s a été modifiée avec succès !\n", villes[i].nom);
+                  return;
         printf("Erreur\n");
         break;
    case 3:
-        return;
-        
-        printf("Erreur\n");
-        break;
+        //void sup_v(Ville* villes, Ville ville) {
+           printf("Nom de la ville à supprimer : ");
+           char nom[50];
+           scanf("%s", nom);
+           for (int i = 0; i < NB_VILLES; i++) {
+             if (strcmp(villes[i].nom, nom) == 0) {
+               for (int j = i; j < NB_VILLES - 1; j++) {
+                 villes[j] = villes[j + 1];
+               }
+             NB_VILLES--;
+             printf("La ville %s a été supprimée avec succès !\n", nom);
+             return;
+             }
+           }
+           printf("La ville %s n'a pas été trouvée\n", nom);   
+           break;
    case 4:
         return;
         
@@ -190,6 +221,9 @@ void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville*
     }
     void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville* villes);
 }
+
+
+//--------------CONDUCTEUR---------------
   
 void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Ville* villes){
   int choix;
@@ -225,7 +259,8 @@ void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Vil
     }
     void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Ville* villes);
 }
-}
+
+//-----------------CLIENT----------------
 
 void menu_client(Conducteur* conducteur, Client* clients, Trajet* trajets,Ville* villes){
   int choix;
