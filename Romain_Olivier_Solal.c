@@ -5,6 +5,7 @@
 #include "Romain_Olivier_Solal.h"
 
 //mettre des constantes qui indiquent la taille des listes : nb client ; nb conducteur ; nb ville
+// JE SUIS CON, NOTE POUR PLUS TARD, DANS LE SWITCH, SE CONTENTER D'APPELER LES FONCTIONS ET LES DEFINIR PLUS TARD (ou plus tot)
 
 typedef struct s_date {
   int annee;
