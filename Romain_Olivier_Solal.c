@@ -54,7 +54,6 @@ void import_json(Conducteur* Concducteur, Client* Clients, Trajet* trajets, Vill
 //3- Admin  
 void admin_mdp_conducteur(Conducteur* conducteurs, Conducteur conducteur);
 void admin_mdp_client(Client* clients, Client client);
-
 //---------------Menu Conducteur-------------------
 // 4 Créer Offre
 void creer_trajet(Conducteur conducteur, Trajet* trajets, Ville* villes);  
@@ -71,8 +70,8 @@ void reserver_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs, Cl
 //9-
 void exit();
 
+//----------------DEBUT DU CODE-----------------
 
-//0- login
 void login(Conducteur* conducteurs, Client* clients, Admin admin) {
     int id;
     int mdp;
@@ -84,41 +83,41 @@ void login(Conducteur* conducteurs, Client* clients, Admin admin) {
     printf("4- Quitter le programme\n");
     scanf("%d", &choix);
     switch (choix) {
-    case 1:
+    case 1: // conducteur
         printf("Identifiant : ");
         scanf("%d", &id);
         printf("Mot de passe : ");
         scanf("%d", &mdp);
         for (int i = 0; i < NB_CONDUCTEURS; i++) {
             if ((conducteurs[i].id == id) && (conducteurs[i].mdp == mdp)) {
-                printf("Bienvenue %s %s !\n", conducteurs[i].id);
+                printf("Bienvenue %s !\n", conducteurs[i].id);
                 menu_conducteur(conducteurs[i], clients, trajets, villes);
                 return;
             }
         }
         printf("Identifiant ou mot de passe incorrect\n");
         break;
-    case 2:
+    case 2: // client
         printf("Identifiant : ");
         scanf("%d", &id);
         printf("Mot de passe : ");
         scanf("%d", &mdp);
         for (int i = 0; i < NB_CLIENTS; i++) {
             if ((clients[i].id == id) && (clients[i].mdp == mdp)) {
-                printf("Bienvenue %s %s !\n", clients[i].id);
+                printf("Bienvenue %s !\n", clients[i].id);
                 menu_client(clients[i], trajets, villes, conducteurs);
                 return;
             }
         }
         printf("Identifiant ou mot de passe incorrect\n");
         break;
-    case 3:
+    case 3: // admin
         printf("Identifiant : ");
         scanf("%d", &id);
         printf("Mot de passe : ");
         scanf("%d", &mdp);
         if ((admin.id == id) && (admin.mdp == mdp))) {
-            printf("Bienvenue %s %s !\n", admin.id);
+            printf("Bienvenue %s !\n", admin.id);
             menu_admin(conducteurs, clients, trajets, villes);
             return;
         }
