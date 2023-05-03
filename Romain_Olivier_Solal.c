@@ -5,13 +5,45 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <openssl/evp.h> //cryptage
+#include "Romain_Olivier_Solal.h"
 
-typedef struct s_date Date;
-typedef struct s_trajet Trajet;
-typedef struct s_ville Ville;
-typedef struct s_conducteur Conducteur;
-typedef struct s_client Client;
-typedef struct s_admin Admin;
+typedef struct s_date {
+  int annee;
+  int mois;
+  int jour;
+  int heure;
+  int minute;
+}Date;
+
+typedef struct s_trajet{
+  Ville* villes[];
+  Date* dates;
+  Conducteur conducteur;
+  Client** clients;
+}Trajet;
+
+typedef struct s_ville{
+  char* nom
+}Ville;
+
+typedef struct s_conducteur{
+  char* nom ;
+  char* prenom;
+  int mdp;
+}Conducteur;
+
+typedef struct s_client{
+  char* nom ;
+  char*prenom;
+}Client;
+
+typedef struct s_admin{
+  char* nom;
+  char* prenom;
+  int mdp;
+}Admin;
+
+
 
 //0-
 void login(Conducteur* conducteurs, Client* clients, Admin admin ); 
@@ -26,7 +58,7 @@ void import_json(Conducteur* Concducteur, Client* Clients, Trajet* trajets, Vill
 void admin_mdp_conducteur(Conducteur* conducteurs, Conducteur conducteur);
 void admin_mdp_client(Client* clients, Client client);
 // 4 Créer Offre
-void creer_trajet(Conducteur conducteur, Trajet* trajets, Ville* villes); // Conducteur* ou Conducteur || note : dans la struct "trajet" on a "horaire" qui est une liste dont  x eme element appartient à l'horaire de départ de la x eme ville du trajet). Dans la meme idée on a aussi une liste avec le nombre de passagers (0,1, ou 2) pour chaque troncon
+void creer_trajet(Conducteur conducteur, Trajet* trajets, Ville* villes); // Conducteur* ou Conducteur || note : dans la struct "trajet" on a "horaire" qui est une liste dont  x eme element appartient à l'horaire de départ de la x eme ville du trajet). Dans la meme idée on a aussi une liste avec le nombre de passagers (0,1, ou 2) pour chaque troncon (ou plutot le nom de chaque client a la place de 0 1 2 et on r
 //5 Afficher tous les trajets du conducteur connecté
 void afficher_trajets(Trajet* trajets, Conducteur conducteur); 
 //6 changer ses logs
