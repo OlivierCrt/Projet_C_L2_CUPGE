@@ -37,9 +37,12 @@ typedef struct s_admin{
   int mdp;
 }Admin;
 
+
+//---------------Start-----------------------
 //0-
 void login(Conducteur* conducteurs, Client* clients, Admin admin ); 
-// 1- Gestion villes
+//---------------Menu Admin-------------------
+//1- Gestion villes
 void add_v(Ville* villes);
 void edit_v(Ville* villes,Ville ville);
 void sup_v(Ville* villes, Ville ville);
@@ -49,16 +52,20 @@ void import_json(Conducteur* Concducteur, Client* Clients, Trajet* trajets, Vill
 //3- Admin  
 void admin_mdp_conducteur(Conducteur* conducteurs, Conducteur conducteur);
 void admin_mdp_client(Client* clients, Client client);
+
+//---------------Menu Conducteur-------------------
 // 4 Créer Offre
 void creer_trajet(Conducteur conducteur, Trajet* trajets, Ville* villes);  
 //5 Afficher tous les trajets du conducteur connecté
 void afficher_trajets(Trajet* trajets, Conducteur conducteur); 
 //6 changer ses logs
 void changer_logs_conducteur( Conducteur conducteur); 
+//---------------Menu Client-------------------
 //7-
 void chercher_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs); 
 //8-
 void reserver_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs, Client client); 
+//---------------Commun aux 4 menus-------------------
 //9-
 void exit();
 
