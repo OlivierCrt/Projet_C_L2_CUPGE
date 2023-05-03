@@ -4,6 +4,8 @@
 #include <openssl/evp.h> //cryptage
 #include "Romain_Olivier_Solal.h"
 
+//mettre des constantes qui indiquent la taille des listes : nb client ; nb conducteur ; nb ville
+
 typedef struct s_date {
   int annee;
   int mois;
@@ -131,6 +133,13 @@ void login(Conducteur* conducteurs, Client* clients, Admin admin) {
     login(conducteurs, clients, admin);
 }
 
+void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville* villes){
+}
+  
+void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Ville* villes)){
+}
 
+void menu_client(Conducteur* conducteur, Client* clients, Trajet* trajets,Ville* villes){
+}
 
 
