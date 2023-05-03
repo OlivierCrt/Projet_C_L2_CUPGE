@@ -134,12 +134,127 @@ void login(Conducteur* conducteurs, Client* clients, Admin admin) {
 }
 
 void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville* villes){
+    int choix;
+    printf("Vous voulez : \n");
+    printf("1- Ajouter une ville\n");
+    printf("2- Modifier une ville\n");
+    printf("3- Supprimer une ville\n");
+    printf("4- Exporter un JSON\n");
+    printf("5- Importer un JSON\n");
+    printf("6- Modifier le profil d'un conducteur\n");
+    printf("7- Modifier le profil d'un client\n");
+    printf("8- Quitter le programme\n");
+    scanf("%d", &choix);
+    switch (choix) {
+    case 1:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 2:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 3:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 4:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 5:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 6:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 7:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 8:
+        return;
+        
+        printf("Erreur\n");
+        break; 
+    default:
+        printf("Choix invalide\n");
+    }
+    void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets,Ville* villes);
 }
   
-void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Ville* villes)){
+void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Ville* villes){
+  int choix;
+    printf("Vous voulez : \n");
+    printf("1- Créer une offre\n");
+    printf("2- Afficher vos trajets\n");
+    printf("3- Changer vos logs\n");
+    printf("4- Quitter le programme\n");
+    scanf("%d", &choix);
+    switch (choix) {
+    case 1:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 2:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 3:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 4:
+        return;
+        
+        printf("Erreur\n");
+        break;
+    default:
+        printf("Choix invalide\n");
+    }
+    void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets,Ville* villes);
+}
 }
 
 void menu_client(Conducteur* conducteur, Client* clients, Trajet* trajets,Ville* villes){
+  int choix;
+    printf("Vous voulez : \n");
+    printf("1- Chercher un trajet\n");
+    printf("2- Reserver un trajet\n");
+    printf("3- Quitter le programme\n");
+    scanf("%d", &choix);
+    switch (choix) {
+    case 1:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 2:
+        return;
+        
+        printf("Erreur\n");
+        break;
+   case 3:
+        return;
+        
+        printf("Erreur\n");
+        break;
+    default:
+        printf("Choix invalide\n");
+    }
+    void menu_client(Conducteur* conducteur, Client* clients, Trajet* trajets,Ville* villes);
 }
 
 
