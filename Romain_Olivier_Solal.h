@@ -6,35 +6,49 @@
 #include <stdbool.h>
 #include <openssl/evp.h> //cryptage
 
-typedef struct s_date Date;
-typedef struct s_trajet Trajet;
-typedef struct s_ville Ville;
-typedef struct s_conducteur Conducteur;
-typedef struct s_client Client;
-typedef struct s_admin Admin;
+typedef struct* s_date Date;
+typedef struct* s_trajet Trajet;
+typedef struct* s_ville Ville;
+typedef struct* s_conducteur Conducteur;
+typedef struct* s_client Client;
+typedef struct* s_admin Admin;
 
+//---------------Start-----------------------
 //0-
-void login(Conducteur* conducteurs, Client* clients, Admin admin ); 
-// 1- Gestion villes
+void login(Conducteur* conducteurs, Client* clients, Admin admin);
+void login_admin(Admin admin);
+void login_conducteur(Conducteur* conducteurs);
+void login_client(Client* clients);
+
+void menu_admin(Conducteur* conducteurs, Client* clients, Trajet* trajets, Ville* villes) {
+void menu_conducteur(Conducteur conducteur, Client* clients, Trajet* trajets, Ville* villes) {
+void menu_client(Conducteur* conducteur, Client* clients, Trajet* trajets, Ville* villes) {
+ 
+
+//---------------Menu Admin-------------------
+//1- Gestion villes
 void add_v(Ville* villes);
-void edit_v(Ville* villes,Ville ville);
+void edit_v(Ville* villes, Ville ville);
 void sup_v(Ville* villes, Ville ville);
 //2- Exportation 
-void export_json(Conducteur* Concducteurs, Client* Clients, Trajet* trajets, Ville* villes , const char* chemin_pc); // une fonction par chaque liste à export/ import ? 
-void import_json(Conducteur* Concducteur, Client* Clients, Trajet* trajets, Ville* villes, const char* chemin_pc); // faut-il fournir la taille pour l'import/l'export ?
+void export_json(Conducteur* Concducteurs, Client* Clients, Trajet* trajets, Ville* villes, const char* chemin_pc);
+void import_json(Conducteur* Concducteur, Client* Clients, Trajet* trajets, Ville* villes, const char* chemin_pc);
 //3- Admin  
-void admin_mdp_conducteur(Conducteur* conducteurs, Conducteur conducteur);
-void admin_mdp_client(Client* clients, Client client);
+void admin_mdp_conducteur(Conducteur* conducteurs); // pas cond solo
+void admin_mdp_client(Client* clients); // pas client solo
+//---------------Menu Conducteur-------------------
 // 4 Créer Offre
-void creer_trajet(Conducteur conducteur, Trajet* trajets, Ville* villes); // Conducteur* ou Conducteur || note : dans la struct "trajet" on a "horaire" qui est une liste dont  x eme element appartient à l'horaire de départ de la x eme ville du trajet). Dans la meme idée on a aussi une liste avec le nombre de passagers (0,1, ou 2) pour chaque troncon
+void creer_trajet(Conducteur conducteur, Trajet* trajets, Ville* villes);
 //5 Afficher tous les trajets du conducteur connecté
-void afficher_trajets(Trajet* trajets, Conducteur conducteur); 
+void afficher_trajets(Trajet* trajets, Conducteur conducteur);
 //6 changer ses logs
-void changer_logs_conducteur( Conducteur conducteur);  // besoin de conducteur* ?
+void changer_logs_conducteur(Conducteur conducteur);
+//---------------Menu Client-------------------
 //7-
-void chercher_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs); // pour la date, rechercher un jour, une heure ou une plage horaire ?
+void chercher_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs); // osef des conducteurs (sauf si ca rentre dans la recherche)
 //8-
-void reserver_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs, Client client); // on comprend ici que reservation et modification sont des synonymes. est ce juste ? ou y a t il 2 fonctions/actions distinctes ?
+void reserver_trajet(Trajet* trajets, Ville* villes, Conducteur* conducteurs, Client client); //idem 
+//---------------Commun aux 4 menus-------------------
 //9-
 void exit();
 
