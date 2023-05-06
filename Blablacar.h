@@ -6,12 +6,12 @@
 #include <stdbool.h>
 #include <openssl/evp.h> //cryptage
 
-typedef struct s_date Date;
-typedef struct s_trajet Trajet;
-typedef struct s_ville Ville;
-typedef struct s_conducteur Conducteur;
-typedef struct s_client Client;
-typedef struct s_admin Admin;
+typedef struct s_date* Date;
+typedef struct s_trajet* Trajet;
+typedef struct s_ville* Ville;
+typedef struct s_conducteur* Conducteur;
+typedef struct s_client* Client;
+typedef struct s_admin* Admin;
 
 
 // se renseiger sur l'export et le chiffrage ( pas sûr des classes à mettre dans ces cas là)
