@@ -29,9 +29,9 @@ int taille_liste_json(json_t* dataJson , const char * motclé);
 
 //----------tous---------
 void login(Conducteur* conducteurs, Client* clients, Admin admin);
-void menu_admin(const char** villes, int *NB_villes  ,   const char ** conds , int* NB_conds, const char** mdpconds);
-void login_admin(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds);
-void login_conducteur(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds);
+void menu_admin(Admin admin,const char** villes, int *NB_villes,     const char** conds, int* NB_conds,const char ** mdpconds, Trajet* trajets, int *NB_trajets , const char **clients, int *NB_clients,const char **MDPclients);
+void login_admin(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds, Trajet* trajets, int *NB_trajets , const char **clients, int *NB_clients,const char **MDPclients);
+void login_conducteur(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds,Trajet* trajets, int *NB_trajets , const char **clients, int *NB_clients,const char **MDPclients);
 
 int date_valide(int annee, int mois, int jour, int heure, int minute);
 
@@ -54,6 +54,19 @@ void sup_MDPc(const char** villes, int *NB_villes);
 void add_MDPc(const char** villes, int* NB_villes);
 void edit_MDPc(const char** villes, int* NB_villes);
 
-void menu_modif_cond(const char** conds, int* NB_conds   ,   const char** villes, int *NB_villes, const char** mdpconds);
+void menu_modif_cond(Admin admin,const char** conds, int* NB_conds   ,   const char** villes, int *NB_villes,  const char** mdpconds, Trajet* trajets, int *NB_trajets , const char **clients, int *NB_clients,const char **MDPclients);
 
-void creer_trajet(const char* conducteur, const char** villes, int * NB_villes);
+void creer_trajet(const char* conducteur, const char** villes, int * NB_villes, Trajet* listetrajos, int* NB_trajets) ;
+void export_liste(json_t* donnee,const char* nomTableau, char** listeChaine, int tailleListe,  const char * chemin_json);
+
+void menuprincipal(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds, Trajet* trajets, int *NB_trajets , const char **clients, int *NB_clients,const char **MDPclients);
+
+void afficher_trajets(Trajet* trajets, int *NB_trajets, const char* conducteur);
+void reserver_trajet(Trajet* trajets, int* NB_trajets, const char** villes, const char* client);
+
+void menu_client(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds, Trajet* trajets, int *NB_trajets , const char *client, const char** clients, int* NB_clients ,const char **MDPclients) ;
+void login_client(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds, Trajet* trajets, int *NB_trajets , const char **clients, int *NB_clients,const char **MDPclients);
+
+void afficher_tous_trajets(Trajet*trajets , const char** conds , int* NB_trajets, int* NB_conds);
+
+void edit_cond(const char* conducteur , const char* mdp);
