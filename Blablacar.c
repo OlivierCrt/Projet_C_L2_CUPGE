@@ -5,7 +5,7 @@
 #include <string.h>
 #include "Blablacar.h"
 #include <jansson.h>
-
+#include "cryptage.c"
 
 struct s_date {
     int annee;
