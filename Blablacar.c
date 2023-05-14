@@ -153,12 +153,14 @@ int taille_liste_json(json_t* dataJson, const char* motclé){
 void login_admin(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds) {
     char ida[20];
     char mdpa[20];
+    char newa[20];
     printf("Identifiant : ");
     scanf("%s", ida);
     printf("Mot de passe : ");
     scanf("%s", mdpa);
+    cryptageV2(mdpa,5,newa);
     
-    if (strcmp(admin->id, ida) == 0 && strcmp(admin->mdp, mdpa) == 0) {
+    if (strcmp(admin->id, ida) == 0 && strcmp(admin->mdp, newa) == 0) {
         printf("Bienvenue %s !\n", admin->id);
         menu_admin(villes,NB_villes , conds , NB_conds, mdpconds);//arg conducteurs, clients, trajets, villes
     } else {
@@ -205,10 +207,12 @@ void menu_admin(const char** villes, int *NB_villes,     const char** conds, int
 void login_conducteur(Admin admin, const char** villes, int *NB_villes , const char** conds , int* NB_conds, const char** mdpconds){
     char idcond[20] ;
     char mdPcond[20] ;
+    char newc[20];
     printf("Identifiant : ");
     scanf("%s", idcond);
     printf("Mot de passe : ");
     scanf("%s", mdPcond);
+    cryptageV2(mdPcond,5,newc);
     printf("okok\n");
 
     for (int i = 0;i<*NB_conds ; i++){
@@ -216,7 +220,7 @@ void login_conducteur(Admin admin, const char** villes, int *NB_villes , const c
         if (strcmp(conds[i],idcond) == 0){
 
             for (int u = 0 ; u<*NB_conds ; u++){
-                if (strcmp(mdpconds[i],mdPcond) == 0){
+                if (strcmp(mdpconds[i],newc) == 0){
                     
                     menu_modif_cond(conds, NB_conds   ,   villes, NB_villes, mdpconds);
 
