@@ -1,0 +1,143 @@
+{
+    "villes" :
+    [
+
+    "Lille",
+    "Toulouse",
+    "Paris",
+    "Nice",
+    "Strasbourg",
+    "Lyon",
+    "Bordeaux",
+    "Montpellier",
+    "Marseille"
+
+    ]
+    ,
+    "conducteurs" :
+    [
+    "Michel",
+    "Grégoire",
+    "Didier"
+    ]
+    ,
+    "clients" :
+    [
+        "Yannick",
+        "Pedro",
+        "Kevin",
+        "Henry",
+        "Ronnald"
+    ]
+    ,
+    "mdp_clients" :
+    [
+        "Complique",
+        "gollum",
+        "ratGourdin",
+        "tsoumtsoum",
+        "projetinfini"
+    ]
+    ,
+    "mdp_conducteurs" :
+    [
+        "pasdidee",
+        "crustacé",
+        "moulesmarinières"
+    ]
+    ,
+    "id_admin" :
+    [
+        "MrTruillet"
+    ]
+    ,
+    "mdp_admin" :
+    [
+        "viveupssitech"
+    ]
+    ,
+    "trajets": [
+        {
+          "conducteur": "Jean",
+          "liste_tronc": [
+            {
+              "ville_depart": "Ville A",
+              "ville_fin": "Ville B",
+              "date_tronc": {
+                "jour": 1,
+                "mois": 1,
+                "annee": 2023
+              },
+              "passagersId": [
+                "Passager 1",
+                "Passager 2"
+              ]
+            },
+            {
+              "ville_depart": "Ville B",
+              "ville_fin": "Ville C",
+              "date_tronc": {
+                "jour": 2,
+                "mois": 1,
+                "annee": 2023
+              },
+              "passagersId": [
+                "Passager 2",
+                "Passager 3"
+              ]
+            },
+            {
+              "ville_depart": "Ville C",
+              "ville_fin": "Ville D",
+              "date_tronc": {
+                "jour": 3,
+                "mois": 1,
+                "annee": 2023
+              },
+              "passagersId": [
+                "Passager 3",
+                "Passager 4"
+              ]
+            }
+          ],
+          "nbVilles": 4
+        },
+        {
+          "conducteur": "Marie",
+          "liste_tronc": [
+            {
+              "ville_depart": "Ville A",
+              "ville_fin": "Ville C",
+              "date_tronc": {
+                "jour": 2,
+                "mois": 1,
+                "annee": 2023
+              },
+              "passagersId": [
+                "Passager 1",
+                "Passager 3"
+              ]
+            },
+            {
+              "ville_depart": "Ville C",
+              "ville_fin": "Ville D",
+              "date_tronc": {
+                "jour": 3,
+                "mois": 1,
+                "annee": 2023
+              },
+              "passagersId": [
+                "Passager 3",
+                "Passager 4"
+              ]
+            }
+          ],
+          "nbVilles": 3
+        }
+      ]
+
+
+
+
+
+}
