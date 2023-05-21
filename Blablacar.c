@@ -690,16 +690,15 @@ void creer_trajet(const char* conducteur, const char** villes, int * NB_villes, 
         
         liste_tronc[i]->date_tronc = liste_date[i];
         
-        printf("golum : %s", v_dep);
+       
         strcpy(v_dep, v_fin);
-        printf("golum : %s", v_dep);
+        
     }
 
     Trajet trajet = allocTrajet(  conducteur , nb_v, liste_tronc );
-printf("test fi  :  %s \n\n\n", trajet->liste_tronc[0]->ville_fin);
-printf("test deb  :  %s \n\n\n", trajet->liste_tronc[0]->ville_depart);
+
     listetrajos[*NB_trajets ] = trajet;
-    printf("ok ltraj\n");
+    printf("Bien reçu!\n\n");
     *NB_trajets = *NB_trajets + 1 ;
 }
 
@@ -713,7 +712,7 @@ void afficher_trajets(Trajet* trajets, int* NB_trajets, const char* conducteur) 
 
             
                 
-                printf("%d - Ville : %s ; Départ à : %d h %d \n\n\n", j + 1, trajets[i]->liste_tronc[j]->ville_depart, trajets[i]->liste_tronc[j]->date_tronc->heure, trajets[i]->liste_tronc[j]->date_tronc->minute);
+                printf("%d - Ville de départ: %s ; Départ à : %d h %d Ville d'arrivée : %s\n\n\n", j + 1, trajets[i]->liste_tronc[j]->ville_depart, trajets[i]->liste_tronc[j]->date_tronc->heure, trajets[i]->liste_tronc[j]->date_tronc->minute, trajets[i]->liste_tronc[j]->ville_fin);
             }
         }
     }
